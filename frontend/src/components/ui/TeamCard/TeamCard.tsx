@@ -11,7 +11,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ card, className = '' }) => {
     return (
         <li className={`flex ${className} ${s.card}`}>
             <div className={`flex ${s.card_top}`}>
-                <img src="./src/assets/images/avatar.png" alt="" />
+                <img src="images/avatar.png" alt="" />
                 <div className={s.merits}>
                     <p>Заслуги</p>
                     <p>{merits}</p>

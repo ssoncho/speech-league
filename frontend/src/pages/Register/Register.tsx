@@ -5,7 +5,7 @@ const Register = () => {
     return (
         <section className={`flex ${s.section}`}>
             <RegisterForm />
-            <img className={s.img} src="../src/assets/images/register.webp" alt="" />
+            <img className={s.img} src="images/register.webp" alt="" />
         </section>
     );
 };

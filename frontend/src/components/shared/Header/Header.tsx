@@ -33,7 +33,7 @@ const Header = () => {
         <header className={`header ${s.header}`}>
             <div className={`flex ${s.container}`}>
                 <img
-                    src="../src/assets/images/logo.webp"
+                    src="images/logo.webp"
                     alt="Логотип Лиги Речи"
                     className={s.logo}
                 />

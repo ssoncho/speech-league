@@ -18,13 +18,13 @@ const Contacts = () => {
                         <div className={`flex ${s.afisha_icons}`}>
                             <a href="#">
                                 <img
-                                    src="../src/assets/icons/telegram.svg"
+                                    src="icons/telegram.svg"
                                     alt="Telegram"
                                 />
                             </a>
                             <a href="#">
                                 <img
-                                    src="../src/assets/icons/whatsapp.svg"
+                                    src="icons/whatsapp.svg"
                                     alt="WhatsApp"
                                 />
                             </a>
@@ -38,7 +38,7 @@ const Contacts = () => {
                         <div className={`flex ${s.afisha_icons}`}>
                             <a href="#">
                                 <img
-                                    src="../src/assets/icons/vk.svg"
+                                    src="icons/vk.svg"
                                     alt="VK"
                                 />
                             </a>

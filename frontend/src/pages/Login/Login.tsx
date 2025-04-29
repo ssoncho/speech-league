@@ -4,7 +4,7 @@ import LoginForm from "@ui/LoginForm/LoginForm";
 const Login = () => {
     return (
         <section className={`flex ${s.section}`}>
-            <img src="../src/assets/images/login.webp" alt="" />
+            <img src="images/login.webp" alt="" />
             <LoginForm />
         </section>
     );
