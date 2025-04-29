@@ -12,7 +12,7 @@ const Footer = () => {
                     <li className={s.footer_navitem}>
                         <a href="/" className={s.footer_navlink}>
                             <img
-                                src="../src/assets/icons/telegram_footer.svg"
+                                src="icons/telegram_footer.svg"
                                 alt="WA"
                             />
                         </a>
@@ -20,7 +20,7 @@ const Footer = () => {
                     <li className={s.footer_navitem}>
                         <a href="/" className={s.footer_navlink}>
                             <img
-                                src="../src/assets/icons/vk_footer.svg"
+                                src="icons/vk_footer.svg"
                                 alt="WA"
                             />
                         </a>
@@ -28,7 +28,7 @@ const Footer = () => {
                     <li className={s.footer_navitem}>
                         <a href="/" className={s.footer_navlink}>
                             <img
-                                src="../src/assets/icons/whatsapp_footer.svg"
+                                src="icons/whatsapp_footer.svg"
                                 alt="WA"
                             />
                         </a>

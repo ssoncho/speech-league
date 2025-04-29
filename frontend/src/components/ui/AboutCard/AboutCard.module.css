@@ -1,5 +1,5 @@
 .card {
-    background: url('../../../assets/images/about.png') no-repeat;
+    background: url('images/about.png') no-repeat;
     flex-direction: column;
     gap: 30px;
     border: 1px #000 solid;

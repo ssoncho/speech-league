@@ -3,7 +3,7 @@ import s from "./Donations.module.css";
 const Donations = () => {
     return (
         <section className={`flex section ${s.section}`}>
-            <img src="../src/assets/icons/donate.svg" alt="" />
+            <img src="icons/donate.svg" alt="" />
             <div className={s.content}>
                 <h2 className={s.title}>Не забывайте иногда донатить нам!</h2>
                 <p className={s.text}>

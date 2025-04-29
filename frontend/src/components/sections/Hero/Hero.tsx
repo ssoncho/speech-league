@@ -11,7 +11,7 @@ const Hero = () => {
     return (
         <section className="section">
             <div className={`flex ${s.content}`}>
-                <img src="../src/assets/images/hero.webp" alt="Hero" />
+                <img src="images/hero.webp" alt="Hero" />
                 <div className={`flex ${s.hero_text}`}>
                     <h1 className={s.title}>
                         Формируем гибкие навыки бесплатно
