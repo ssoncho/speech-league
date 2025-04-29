@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_layout_components_about_us_cards",
+  "info": {
+    "displayName": "aboutUsCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
