@@ -1,0 +1,10 @@
+.button {
+    cursor: pointer;
+    border: none;
+    background-color: #fff1c2;
+    padding: 12px 50px;
+    font-size: 20px;
+    font-family: "JejuMyeongjo";
+    text-transform: uppercase;
+    border-radius: 10px;
+}

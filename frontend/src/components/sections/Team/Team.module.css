@@ -1,0 +1,18 @@
+.title {
+    margin-bottom: 60px;
+    font-size: 36px;
+    text-align: center;
+}
+
+.list {
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.wrap {
+    max-width: 1200px;
+}
+
+.mySwiper {
+    padding: 10px 20px 40px !important;
+}

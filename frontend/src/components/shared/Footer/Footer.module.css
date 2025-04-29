@@ -1,0 +1,28 @@
+.footer {
+    background-color: #000;
+    height: 132px;
+}
+
+.container {
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-inline: 40px;
+    max-width: 1440px;
+    height: 100%;
+}
+
+.text_left,
+.contacts {
+    flex-basis: 241px;
+    flex-shrink: 1;
+    color: #fff;
+    font-size: 24px;
+    font-family: "Jura";
+    text-align: center;
+}
+
+.footer_nav {
+    align-items: center;
+    gap: 70px;
+}

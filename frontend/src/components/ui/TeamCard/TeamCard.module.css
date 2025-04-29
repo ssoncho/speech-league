@@ -1,0 +1,43 @@
+.card {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 18px;
+    height: 470px;
+    font-family: "JejuMyeongjo";
+    text-align: center;
+}
+
+.card_top {
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.roles {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.separator {
+    border-radius: 50%;
+    background: #fff;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    width: 105px;
+    height: 1px;
+}
+
+.description {
+    font-size: 20px;
+}
