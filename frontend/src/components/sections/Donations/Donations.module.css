@@ -1,0 +1,23 @@
+.section {
+    align-items: center;
+    gap: 80px;
+}
+
+.content {
+    max-width: 945px;
+    text-align: center;
+}
+
+.title,
+.text {
+    font-size: 32px;
+    font-family: "JejuMyeongjo";
+}
+
+.title {
+    color: #c70808;
+}
+
+.sum {
+    color: #c70808;
+}

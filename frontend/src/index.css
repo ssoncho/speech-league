@@ -1,0 +1,124 @@
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
+
+.authPage .header {
+    background: transparent;
+}
+
+.scrollbar {
+    height: 100vh;
+}
+
+.authPage {
+    background: linear-gradient(
+        0deg,
+        rgba(253, 252, 249, 1) 0%,
+        rgba(254, 246, 208, 1) 100%
+    );
+}
+
+.flex {
+    display: flex;
+}
+
+.width345 {
+    width: 345px;
+}
+.section {
+    padding: 50px 0;
+}
+
+.section:first-child {
+    padding-top: 0;
+}
+
+.swiper-button-next {
+    right: 0 !important; /* Прижимаем к правому краю контейнера .wrap */
+}
+
+.swiper-button-prev {
+    left: 0 !important; /* Прижимаем к левому краю контейнера .wrap */
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Или ваш корневой контейнер */
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.15; /* 1. Correct the line height in all browsers. */
+    -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+    background-color: #fdfcf9;
+    height: 100%;
+    tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
+}
+
+body {
+    margin: 0; /* Remove the margin in all browsers. */
+    height: 100%;
+}
+
+table {
+    border-color: currentcolor;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0; /* 2 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    font-family: inherit; /* 1 */
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    appearance: button;
+}
+
+p,
+a {
+    margin: 0;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: 400;
+    font-family: "JejuMyeongjo";
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
