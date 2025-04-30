@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_layout_be_partners",
+  "info": {
+    "displayName": "BePartner"
+  },
+  "options": {},
+  "attributes": {
+    "event": {
+      "displayName": "BePartnerCard",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout-components.be-partner-card",
+      "required": true
+    },
+    "community": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout-components.be-partner-card",
+      "required": true
+    },
+    "volunteers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout-components.be-partner-card",
+      "required": true
+    },
+    "business": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout-components.be-partner-card",
+      "required": true
+    },
+    "partnershipText": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

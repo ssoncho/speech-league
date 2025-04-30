@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_partners",
+  "info": {
+    "displayName": "partners",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "thanks": {
+      "type": "text",
+      "required": true
+    },
+    "partners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::community.community"
+    }
+  }
+}

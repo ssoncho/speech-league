@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_aboutuses",
+  "info": {
+    "displayName": "aboutUs"
+  },
+  "options": {},
+  "attributes": {
+    "we": {
+      "displayName": "aboutUsCard",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout-components.about-us-card"
+    },
+    "mission": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout-components.about-us-card"
+    },
+    "financing": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout-components.about-us-card"
+    }
+  }
+}
