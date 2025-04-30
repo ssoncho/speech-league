@@ -419,7 +419,7 @@ export interface ApiContactsContacts extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     donationDetails: Schema.Attribute.Text & Schema.Attribute.Required;
-    donationPhone: Schema.Attribute.String & Schema.Attribute.Required;
+    donationPhone: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
