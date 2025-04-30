@@ -369,110 +369,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCommunityCommunity extends Struct.CollectionTypeSchema {
-  collectionName: 'communities';
-  info: {
-    description: '';
-    displayName: '\u0421\u043E\u043E\u0431\u0449\u0435\u0441\u0442\u0432\u0430';
-    pluralName: 'communities';
-    singularName: 'community';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    fullDescription: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::community.community'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
-    shortDescription: Schema.Attribute.Text;
-    type: Schema.Attribute.Enumeration<['hidden', 'partner', 'resident']> &
-      Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    url: Schema.Attribute.String;
-  };
-}
-
-export interface ApiContactsContacts extends Struct.SingleTypeSchema {
-  collectionName: 'contacts_plural';
-  info: {
-    description: '';
-    displayName: '\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B \u0432\u0438\u0442\u0440\u0438\u043D\u044B';
-    pluralName: 'contacts-plural';
-    singularName: 'contacts';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    donationDetails: Schema.Attribute.Text & Schema.Attribute.Required;
-    donationPhone: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::contacts.contacts'
-    > &
-      Schema.Attribute.Private;
-    phone: Schema.Attribute.String & Schema.Attribute.Required;
-    phoneOwner: Schema.Attribute.String & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
-    socialLink: Schema.Attribute.Component<'components.link', true>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
-  collectionName: 'home_pages';
-  info: {
-    description: '';
-    displayName: '\u0412\u0438\u0442\u0440\u0438\u043D\u0430';
-    pluralName: 'home-pages';
-    singularName: 'home-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    aboutUs: Schema.Attribute.Component<'layout.about-us', false>;
-    bePartner: Schema.Attribute.Component<'layout.be-partner', false>;
-    contacts: Schema.Attribute.Component<'layout.contacts', false> &
-      Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    donation: Schema.Attribute.Component<'layout.donation', false>;
-    hero: Schema.Attribute.Component<'layout.hero', false> &
-      Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-page.home-page'
-    > &
-      Schema.Attribute.Private;
-    partners: Schema.Attribute.Component<'layout.partners', false>;
-    publishedAt: Schema.Attribute.DateTime;
-    residents: Schema.Attribute.Component<'layout.residents', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -982,9 +878,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::community.community': ApiCommunityCommunity;
-      'api::contacts.contacts': ApiContactsContacts;
-      'api::home-page.home-page': ApiHomePageHomePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
