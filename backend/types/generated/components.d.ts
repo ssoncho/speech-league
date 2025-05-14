@@ -95,6 +95,17 @@ export interface LayoutBePartner extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutCalendar extends Struct.ComponentSchema {
+  collectionName: 'components_layout_calendar';
+  info: {
+    description: '';
+    displayName: 'Calendar';
+  };
+  attributes: {
+    events: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+  };
+}
+
 export interface LayoutContacts extends Struct.ComponentSchema {
   collectionName: 'components_layout_contacts';
   info: {
@@ -171,6 +182,7 @@ declare module '@strapi/strapi' {
       'layout-components.be-partner-card': LayoutComponentsBePartnerCard;
       'layout.about-us': LayoutAboutUs;
       'layout.be-partner': LayoutBePartner;
+      'layout.calendar': LayoutCalendar;
       'layout.contacts': LayoutContacts;
       'layout.donation': LayoutDonation;
       'layout.hero': LayoutHero;

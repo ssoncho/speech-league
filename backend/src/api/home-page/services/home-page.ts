@@ -8,12 +8,12 @@ export default factories.createCoreService(
   "api::home-page.home-page",
   ({ strapi }) => ({
     async find(params = {}) {
-      const entities = await strapi
-        .documents("api::home-page.home-page")
-        .findMany({
+      const [entities, communities, events] = await Promise.all([
+        strapi.documents("api::home-page.home-page").findMany({
           populate: {
             hero: true,
             contacts: true,
+            calendar: true,
             aboutUs: {
               populate: "*",
             },
@@ -24,7 +24,14 @@ export default factories.createCoreService(
             },
             partners: true,
           },
-        });
+        }),
+
+        strapi.documents("api::community.community").findMany({
+          fields: ["name", "url", "type"],
+        }),
+
+        strapi.service("api::event.event").getShortCalendar(),
+      ]);
 
       if (!entities || !entities.length) {
         return null;
@@ -32,27 +39,21 @@ export default factories.createCoreService(
 
       const homePage = entities[0];
 
-      const residents = await strapi
-        .documents("api::community.community")
-        .findMany({
-          filters: { type: "resident" },
-          fields: ["name", "url"],
-        });
+      const residents = communities.filter((c) => c.type === "resident");
 
       // Если в компоненте residents есть поле residents, подставляем туда список сообществ
       if (homePage.residents) {
         homePage.residents.residents = residents;
       }
 
-      const partners = await strapi
-        .documents("api::community.community")
-        .findMany({
-          filters: { type: "partner" },
-          fields: ["name", "url"],
-        });
+      const partners = communities.filter((c) => c.type === "partner");
 
       if (homePage.partners) {
         homePage.partners.partners = partners;
+      }
+
+      if (homePage.calendar) {
+        homePage.calendar.events = events;
       }
 
       return homePage as any;
