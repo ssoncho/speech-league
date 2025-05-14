@@ -23,6 +23,12 @@
       "component": "layout.contacts",
       "required": true
     },
+    "calendar": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.calendar",
+      "required": true
+    },
     "aboutUs": {
       "type": "component",
       "repeatable": false,

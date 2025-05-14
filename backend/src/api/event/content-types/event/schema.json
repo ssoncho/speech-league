@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Мероприятия",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "events"
+    },
+    "community": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::community.community",
+      "inversedBy": "events"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true,
+      "maxLength": 40
+    },
+    "url": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer",
+      "required": false
+    },
+    "isFreeToPay": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
