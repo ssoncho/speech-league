@@ -38,6 +38,12 @@
       "relation": "oneToMany",
       "target": "api::event.event",
       "mappedBy": "community"
+    },
+    "leader": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "communities"
     }
   }
 }

@@ -9,7 +9,7 @@
     "displayName": "Пользователи"
   },
   "options": {
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -18,14 +18,6 @@
       "unique": true,
       "configurable": false,
       "required": false
-    },
-    "firstName": {
-      "type": "string",
-      "required": true
-    },
-    "lastName": {
-      "type": "string",
-      "required": true
     },
     "email": {
       "type": "email",
@@ -73,11 +65,65 @@
       "inversedBy": "users",
       "configurable": false
     },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
     "projects": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::project.project",
       "mappedBy": "leader"
+    },
+    "patronymic": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "date"
+    },
+    "vkUrl": {
+      "type": "string"
+    },
+    "showVk": {
+      "type": "boolean",
+      "default": true
+    },
+    "fbUrl": {
+      "type": "string"
+    },
+    "showFb": {
+      "type": "boolean",
+      "default": true
+    },
+    "tgUrl": {
+      "type": "string"
+    },
+    "showTg": {
+      "type": "boolean",
+      "default": true
+    },
+    "aboutMe": {
+      "type": "text",
+      "maxLength": 40
+    },
+    "isPublic": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "communities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::community.community",
+      "mappedBy": "leader"
+    },
+    "fio": {
+      "type": "string",
+      "private": true
     }
   }
 }

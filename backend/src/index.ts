@@ -1,4 +1,5 @@
 import type { Core } from "@strapi/strapi";
+import { fdatasync } from "fs";
 
 export default {
   /**
@@ -22,12 +23,37 @@ export default {
 
       async beforeCreate(event: any) {
         const { data } = event.params;
-        data.username = data?.email;
+        if (data?.email) {
+          data.username = data.email;
+        }
+        data.fio = [data.lastName, data.firstName, data.patronymic]
+          .filter(Boolean)
+          .join(" ");
+
+        // if (data.fio) {
+        //   const parts = data.fio.trim().split(/\s+/);
+        //   data.lastName = parts[0] || null;
+        //   data.firstName = parts[1] || null;
+        //   data.patronymic = parts[2] || null;
+        // }
       },
 
       async beforeUpdate(event: any) {
         const { data } = event.params;
-        data.username = data?.email;
+        if (data?.email) {
+          data.username = data.email;
+        }
+
+        data.fio = [data.lastName, data.firstName, data.patronymic]
+          .filter(Boolean)
+          .join(" ");
+
+        // if (data.fio) {
+        //   const parts = data.fio.trim().split(/\s+/);
+        //   data.lastName = parts[0] || null;
+        //   data.firstName = parts[1] || null;
+        //   data.patronymic = parts[2] || null;
+        // }
       },
     });
   },
