@@ -14,6 +14,17 @@ export default {
     return await strapi.contentAPI.sanitize.output(userData, schema);
   },
 
+  async getShortInfo(ctx) {
+    const user = ctx.state.user;
+    const { firstName, lastName, role } = user;
+    const result: Record<string, any> = {
+      firstName,
+      lastName,
+      role: role.name,
+    };
+    return ctx.send(result);
+  },
+
   async updateInfo(ctx) {
     const user = ctx.state.user;
 

@@ -10,5 +10,10 @@ export default {
       path: "/profile",
       handler: "profile.updateInfo",
     },
+    {
+      method: "GET",
+      path: "/profile/shortInfo",
+      handler: "profile.getShortInfo",
+    },
   ],
 };
