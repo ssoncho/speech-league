@@ -28,6 +28,7 @@ export default factories.createCoreService(
 
         strapi.documents("api::community.community").findMany({
           fields: ["name", "url", "type"],
+          status: "published",
         }),
 
         strapi.service("api::event.event").getShortCalendar(),

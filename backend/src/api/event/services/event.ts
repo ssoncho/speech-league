@@ -30,6 +30,7 @@ export default factories.createCoreService(
         },
         limit: 7,
         start: 0,
+        status: "published",
       });
 
       return events;
