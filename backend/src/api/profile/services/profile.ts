@@ -1,0 +1,5 @@
+/**
+ * profile service
+ */
+
+export default () => ({});
