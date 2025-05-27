@@ -5,4 +5,5 @@
     padding-inline: 40px;
     max-width: 1440px;
     min-height: calc(100vh - 272px);
+    width: 100%;
 }

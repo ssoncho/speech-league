@@ -1,16 +1,18 @@
 import s from "./PartnerCard.module.css";
-import { PartnerCardType } from "@mytypes/types";
+import { Text } from "@gravity-ui/uikit";
 
-type PartnerCardProps = {
-    partner: PartnerCardType;
-};
-
-const PartnerCard: React.FC<PartnerCardProps> = ({ partner }) => {
-    const { name, avatar } = partner;
+const PartnerCard = ({ partner }: any) => {
+    const { name, url } = partner;
     return (
         <li className={`flex ${s.card}`}>
-            <img className={s.avatar} src={avatar} alt="" />
-            <p className={s.name}>{name}</p>
+            <img
+                className={s.avatar}
+                src="images/partner.webp"
+                alt=""
+            />
+            <Text className={s.name} variant="body-3">
+                {url ? <a target="_blank" href={url}>{name}</a> : name}
+            </Text>
         </li>
     );
 };

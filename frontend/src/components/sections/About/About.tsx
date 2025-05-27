@@ -1,33 +1,13 @@
 import s from "./About.module.css";
-
 import AboutCard from "@ui/AboutCard/AboutCard";
-import { AboutCardType } from "@mytypes/types";
 
-const ABOUT_CARDS: AboutCardType[] = [
-    {
-        title: "Что такое Лига Речи?",
-        description:
-            "Мы – команда энтузиастов, которая с 2015 года проводит оффлайн и онлайн мероприятия для развития гибких навыков. Мы рады всем организаторам, готовым присоединиться к нам и нашей миссии.",
-    },
-    {
-        title: "Миссия Лиги Речи",
-        description:
-            "Мы стремимся создать пространство, в котором любой житель Екатеринбурга, независимо от возраста, социального и финансового положения, сможет легко и с удовольствием развивать важнейшие гибкие навыки, описанные концепцией «4К»: коммуникацию, командную работу, креативность, критическое мышление.",
-    },
-    {
-        title: "Кто финансирует Лигу Речи?",
-        description:
-            "Никто. Мы трудимся за идею и умеем экономить. Мероприятия проводим на бесплатных площадках. Уговариваем тренеров работать бесплатно. На донаты участников приобретаем воду, посуду, канцтовары, кубки, дипломы, благодарности и прочее.",
-    },
-];
-
-const About = () => {
+const About = ({ we, mission, financing }: any) => {
     return (
         <section className="section">
             <ul className={`flex ${s.list}`}>
-                {ABOUT_CARDS.map((card: AboutCardType) => {
-                    return <AboutCard card={card} />;
-                })}
+                <AboutCard card={we} />
+                <AboutCard card={mission} />
+                <AboutCard card={financing} />
             </ul>
         </section>
     );

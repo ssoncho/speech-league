@@ -1,46 +1,16 @@
 import s from "./EventList.module.css";
 
-import { EventType } from "@mytypes/types";
 import EventCard from "@ui/EventCard/EventCard";
+import { useEffect } from "react";
 
-const EVENTS: EventType[] = [
-    {
-        date: "2025-11-18",
-        name: "Ораторфест",
-        description: "Фестиваль развития гибких навыков",
-        price: "Бесплатно",
-    },
-    {
-        date: "2025-11-18",
-        name: "Ораторфест",
-        description: "Фестиваль развития гибких навыков",
-        price: "Бесплатно",
-    },
-    {
-        date: "2025-11-18",
-        name: "Ораторфест",
-        description: "Фестиваль развития гибких навыков",
-        price: "Бесплатно",
-    },
-    {
-        date: "2025-11-18",
-        name: "Ораторфест",
-        description: "Фестиваль развития гибких навыков",
-        price: "Бесплатно",
-    },
-    {
-        date: "2025-11-18",
-        name: "Ораторфест",
-        description: "Фестиваль развития гибких навыков",
-        price: "Бесплатно",
-    },
-];
-
-const EventList = () => {
+const EventList = ({ events }: any) => {
+    useEffect(() => {
+        console.log(events);
+    }, []);
     return (
         <div className={`flex ${s.list}`}>
-            {EVENTS.map((event: EventType) => {
-                return <EventCard event={event} />;
+            {events.map((event: any) => {
+                return <EventCard {...event}/>;
             })}
         </div>
     );

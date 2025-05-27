@@ -1,61 +1,53 @@
 import s from "./Partnership.module.css";
+import { Text } from "@gravity-ui/uikit";
 
-const Partnership = () => {
+const Partnership = ({
+    business,
+    community,
+    event,
+    volunteers,
+    partnershipText,
+    phone,
+}: any) => {
     return (
         <section className="section">
             <div className={s.content}>
                 <div className={`${s.grid_section} ${s.lt}`}>
                     <div className={`flex ${s.wrap}`}>
-                        <h2 className={s.title}>
-                            Делаете крутое бесплатное мероприятие?
-                        </h2>
-                        <p className={s.description}>
-                            Добро пожаловать! Наш клуб организаторов будет рад
-                            принять вас в свои ряды!
-                        </p>
+                        <Text as="h2" variant="display-2">
+                            {event.header}
+                        </Text>
+                        <Text variant="body-2">{event.description}</Text>
                     </div>
                 </div>
                 <div className={`${s.grid_section} ${s.rt}`}>
                     <div className={`flex ${s.wrap}`}>
-                        <h2 className={s.title}>
-                            У Вас клуб или сообщество? Развиваете гибкий навык?
-                        </h2>
-                        <p className={s.description}>
-                            Присоединяйтесь к нашему клубу организаторов! Ваши
-                            анонсы появятся в календаре Лиги Речи, к Вам придут
-                            новые участники. А Вы иногда будете делиться опытом
-                            бесплатно.
-                        </p>
+                        <Text as="h2" variant="display-2">
+                            {community.header}
+                        </Text>
+                        <Text variant="body-2">{community.description}</Text>
                     </div>
                 </div>
                 <div className={`${s.grid_section} ${s.lb}`}>
                     <div className={`flex ${s.wrap}`}>
-                        <h2 className={s.title}>
-                            Не коммерческий проект?Нужны тренеры-волонтёры?
-                        </h2>
-                        <p className={s.description}>
-                            Найдём Вам активных тренеров-новичков. Договоримся,
-                            чтобы помогли бесплатно в обмен на Вашу PR-поддержку
-                            нашему проекту.
-                        </p>
+                        <Text as="h2" variant="display-2">
+                            {volunteers.header}
+                        </Text>
+                        <Text variant="body-2">{volunteers.description}</Text>
                     </div>
                 </div>
                 <div className={`${s.grid_section} ${s.rb}`}>
                     <div className={`flex ${s.wrap}`}>
-                        <h2 className={s.title}>
-                            Вы из бизнеса?Хотите развивать сотрудников?
-                        </h2>
-                        <p className={s.description}>
-                            Подберём профессионального тренера под Ваши задачи,
-                            предложим варианты. У нас десятки тренеров, мы
-                            каждого видели в деле, дадим рекомендации.
-                        </p>
+                        <Text as="h2" variant="display-2">
+                            {business.header}
+                        </Text>
+                        <Text variant="body-2">{business.description}</Text>
                     </div>
                 </div>
             </div>
-            <h3 className={s.contact}>
-                Звоните и начнём сотрудничество: +7 950 550-07-71
-            </h3>
+            <Text as="h3" variant="display-3">
+                {partnershipText} {phone}
+            </Text>
         </section>
     );
 };

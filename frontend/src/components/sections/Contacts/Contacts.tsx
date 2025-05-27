@@ -1,47 +1,57 @@
 import s from "./Contacts.module.css";
+import { Text } from "@gravity-ui/uikit";
 
-const Contacts = () => {
+const Contacts = (props: any) => {
+    const { phone, mailingText, groupsText, groupLinks, mailingLinks } = props;
     return (
         <section className="section">
             <div className={`flex ${s.content}`}>
                 <div className={s.left_content}>
-                    <h2 className={s.phone_number}>
-                        Телефон: <br /> +7 950 550-07-71
-                    </h2>
+                    <Text
+                        as="h2"
+                        variant="display-4"
+                        className={s.phone_number}
+                    >
+                        Телефон: <br /> {phone}
+                    </Text>
                 </div>
                 <div className={s.separator}></div>
                 <div className={`flex ${s.right_content}`}>
                     <div className={`flex ${s.afisha}`}>
-                        <h2 className={s.afisha_text}>
-                            Подпишись на афишу <br /> (приходит раз в 2 недели):
-                        </h2>
+                        <Text
+                            as="h2"
+                            variant="display-2"
+                            className={s.afisha_text}
+                        >
+                            {mailingText}
+                        </Text>
                         <div className={`flex ${s.afisha_icons}`}>
-                            <a href="#">
-                                <img
-                                    src="icons/telegram.svg"
-                                    alt="Telegram"
-                                />
-                            </a>
-                            <a href="#">
-                                <img
-                                    src="icons/whatsapp.svg"
-                                    alt="WhatsApp"
-                                />
-                            </a>
+                            {mailingLinks.map((link: any) => {
+                                return (
+                                    <a href={link.url} target="_blank">
+                                        <img src="icons/vk.svg" alt="VK"  />
+                                    </a>
+                                );
+                            })}
                         </div>
                     </div>
 
                     <div className={`flex ${s.afisha}`}>
-                        <h2 className={s.afisha_text}>
-                            Вступи в группу <br /> (читай программы и анонсы):
-                        </h2>
+                        <Text
+                            as="h2"
+                            variant="display-2"
+                            className={s.afisha_text}
+                        >
+                            {groupsText}
+                        </Text>
                         <div className={`flex ${s.afisha_icons}`}>
-                            <a href="#">
-                                <img
-                                    src="icons/vk.svg"
-                                    alt="VK"
-                                />
-                            </a>
+                            {groupLinks.map((link: any) => {
+                                return (
+                                    <a href={link.url} target="_blank">
+                                        <img src="icons/vk.svg" alt="VK" />
+                                    </a>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
