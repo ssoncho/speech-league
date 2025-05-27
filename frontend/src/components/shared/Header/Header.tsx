@@ -1,7 +1,6 @@
 import s from "./Header.module.css";
 import { Link } from "react-router";
-import { useEffect } from "react";
-import { useLocation } from "react-router";
+import { Text } from "@gravity-ui/uikit";
 
 type HeaderLink = {
     name: string;
@@ -9,26 +8,12 @@ type HeaderLink = {
 };
 
 const HEADER_LINKS: HeaderLink[] = [
-    { name: "Кто мы", link: "/" },
-    { name: "Проекты", link: "/" },
-    { name: "Сообщества", link: "/login" },
+    { name: "КТО МЫ", link: "/" },
+    { name: "ПРОЕКТЫ", link: "/" },
+    { name: "СООБЩЕСТВА", link: "/login" },
 ];
 
 const Header = () => {
-    const location = useLocation();
-    const rootElement = document.getElementById("root");
-
-    useEffect(() => {
-        if (
-            location.pathname === "/login" ||
-            location.pathname === "/register"
-        ) {
-            rootElement?.classList.add("authPage");
-        } else {
-            rootElement?.classList.remove("authPage");
-        }
-    }, [location.pathname, rootElement]);
-
     return (
         <header className={`header ${s.header}`}>
             <div className={`flex ${s.container}`}>
@@ -38,10 +23,13 @@ const Header = () => {
                     className={s.logo}
                 />
                 <ul className={`flex ${s.header_navlist}`}>
-                    {HEADER_LINKS.map((link: HeaderLink) => {
+                    {HEADER_LINKS.map((link: HeaderLink, index) => {
                         return (
-                            <li className={s.header_navitem}>
-                                <Link to={link.link}>{link.name}</Link>
+                            <li key={index} className={s.header_navitem}>
+                                {" "}
+                                <Text variant="header-1">
+                                    <Link to={link.link}>{link.name}</Link>
+                                </Text>
                             </li>
                         );
                     })}

@@ -1,0 +1,12 @@
+.section {
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 50px;
+    box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.1);
+    background-color: rgb(253, 252, 249);
+    padding: 30px;
+}
+
+.title {
+    margin-bottom: 30px;
+}

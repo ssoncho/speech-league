@@ -1,0 +1,33 @@
+.header {
+    background: linear-gradient(
+        0deg,
+        rgba(253, 252, 249, 1) 0%,
+        rgba(254, 246, 208, 1) 100%
+    );
+    width: 100%;
+    height: 140px;
+    font-size: 20px;
+    font-family: "JejuMyeongjo";
+}
+
+.container {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 100%;
+}
+
+.user_info {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.links {
+    gap: 50px;
+}
+
+.exit_link {
+    color: #C70808;
+    gap: 10px;
+}

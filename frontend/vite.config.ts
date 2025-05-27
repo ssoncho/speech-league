@@ -12,7 +12,9 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, "./src/components/shared"),
       "@pages": path.resolve(__dirname, "./src/pages"),
       "@sections": path.resolve(__dirname, "./src/components/sections"),
+      "@layout": path.resolve(__dirname, "./src/components/layout"),
       "@mytypes": path.resolve(__dirname, "./src/types"),
+      "@api": path.resolve(__dirname, "./src/api"),
     },
   },
   plugins: [

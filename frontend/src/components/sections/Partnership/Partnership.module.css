@@ -1,5 +1,5 @@
 .content {
-    margin: 0 auto;
+    margin: 0 auto 30px;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -12,10 +12,6 @@
 .wrap {
     flex-direction: column;
     gap: 30px;
-}
-
-.title {
-    font-size: 32px;
 }
 
 .grid_section {
@@ -48,15 +44,4 @@
 .rb {
     padding-left: 50px;
     padding-top: 50px;
-}
-
-.description {
-    font-family: "Jura";
-    font-size: 20px;
-}
-
-.contact {
-    text-align: center;
-    font-size: 36px;
-    margin-top: 20px;
 }

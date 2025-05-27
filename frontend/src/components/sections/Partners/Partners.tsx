@@ -1,26 +1,14 @@
 import s from "./Partners.module.css";
-import { PartnerCardType } from "@mytypes/types";
 import PartnerCard from "@ui/PartnerCard/PartnerCard";
+import { Text } from "@gravity-ui/uikit";
 
-const PARTNERS_LIST: PartnerCardType[] = [
-    { name: "Департамент молодежной политики", avatar: "images/partner.webp" },
-    { name: "Точка кипения УрФУ", avatar: "images/partner.webp" },
-    { name: "Точка кипения Ельцин Центра", avatar: "images/partner.webp" },
-    { name: "Наше Радио", avatar: "images/partner.webp" },
-    { name: "Платформа Радиотуб", avatar: "images/partner.webp" },
-    { name: "Платформа Cerm.ru", avatar: "images/partner.webp" },
-    { name: "Завод Кубков", avatar: "images/partner.webp" },
-    { name: "Синара-Центр", avatar: "images/partner.webp" },
-    { name: "ДКЖ", avatar: "images/partner.webp" },
-];
-
-const Partners = () => {
+const Partners = ({partners, thanks}: any) => {
     return (
         <section className="section">
-            <h2 className={s.title}>Партнёры Лиги Речи</h2>
-            <h3 className={s.subtitle}>Благодарим Вас за поддержку!</h3>
+            <Text className={s.title} as="h2" variant="display-3">Партнёры Лиги Речи</Text>
+            <h3 className={s.subtitle}>{thanks}</h3>
             <ul className={`flex ${s.list}`}>
-                {PARTNERS_LIST.map((partner: PartnerCardType) => {
+                {partners.map((partner: any) => {
                     return <PartnerCard partner={partner} />;
                 })}
             </ul>

@@ -1,0 +1,11 @@
+.link {
+    padding: 15px 20px;
+    font-family: "JejuMyeongjo";
+    transition: all .1s ease-in-out;
+    gap: 20px;
+    align-items: center;
+}
+
+.link:hover {
+    background-color: #fef6d0;
+}

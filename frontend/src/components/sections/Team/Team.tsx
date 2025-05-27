@@ -2,85 +2,33 @@ import s from "./Team.module.css";
 
 import TeamCard from "@ui/TeamCard/TeamCard";
 import { TeamCardType } from "../../../types/types";
+import axios, { AxiosResponse } from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { useEffect, useState } from "react";
 
-const TEAM_CARDS: TeamCardType[] = [
-    {
-        name: "Павел Пинженин",
-        merits: "233",
-        roles: [
-            "Лидер Ораториада",
-            "Лидер Оратор Комбат",
-            "Основатель Лиги Речи",
-        ],
-        description: "Тренер тренеров, игропрактик, тренер презентаций",
-        vklink: "https://vk.com/id6421115",
-    },
-    {
-        name: "Павел Пинженин",
-        merits: "233",
-        roles: [
-            "Лидер Ораториада",
-            "Лидер Оратор Комбат",
-            "Основатель Лиги Речи",
-        ],
-        description: "Тренер тренеров, игропрактик, тренер презентаций",
-        vklink: "https://vk.com/id6421115",
-    },
-    {
-        name: "Павел Пинженин",
-        merits: "233",
-        roles: [
-            "Лидер Ораториада",
-            "Лидер Оратор Комбат",
-            "Основатель Лиги Речи",
-        ],
-        description: "Тренер тренеров, игропрактик, тренер презентаций",
-        vklink: "https://vk.com/id6421115",
-    },
-    {
-        name: "Павел Пинженин",
-        merits: "233",
-        roles: [
-            "Лидер Ораториада",
-            "Лидер Оратор Комбат",
-            "Основатель Лиги Речи",
-        ],
-        description: "Тренер тренеров, игропрактик, тренер презентаций",
-        vklink: "https://vk.com/id6421115",
-    },
-    {
-        name: "Павел Пинженин",
-        merits: "233",
-        roles: [
-            "Лидер Ораториада",
-            "Лидер Оратор Комбат",
-            "Основатель Лиги Речи",
-        ],
-        description: "Тренер тренеров, игропрактик, тренер презентаций",
-        vklink: "https://vk.com/id6421115",
-    },
-    {
-        name: "Павел Пинженин",
-        merits: "233",
-        roles: [
-            "Лидер Ораториада",
-            "Лидер Оратор Комбат",
-            "Основатель Лиги Речи",
-        ],
-        description: "Тренер тренеров, игропрактик, тренер презентаций",
-        vklink: "https://vk.com/id6421115",
-    },
-];
 
 const Team = () => {
+    const [team, setTeam] = useState([]);
+
+    const getTeamData = () => {
+        axios
+            .get("https://speech-league.onrender.com/api/team")
+            .then((response: AxiosResponse) => {
+                console.log(response.data);
+                setTeam(response.data);
+            });
+    };
+
+    useEffect(() => {
+        getTeamData();
+    }, []);
     return (
         <section className="section">
             <h2 className={s.title}>Команда Лиги Речи</h2>
-            {TEAM_CARDS.length < 4 ? (
+            {team.length < 4 ? (
                 <ul className={`flex ${s.list}`}>
-                    {TEAM_CARDS.map((card: TeamCardType) => {
+                    {team.map((card: TeamCardType) => {
                         return <TeamCard className="width345" card={card} />;
                     })}
                 </ul>
@@ -94,7 +42,7 @@ const Team = () => {
                         navigation
                         pagination={{ clickable: true }}
                     >
-                        {TEAM_CARDS.map((card: TeamCardType) => {
+                        {team.map((card: TeamCardType) => {
                             return (
                                 <SwiperSlide>
                                     <TeamCard card={card} />

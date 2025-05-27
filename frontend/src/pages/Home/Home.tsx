@@ -8,18 +8,56 @@ import Team from "@sections/Team/Team";
 import Partners from "@sections/Partners/Partners";
 import Partnership from "@sections/Partnership/Partnership";
 
+import { getHomePageData } from "../../api/HomePageData";
+
+import { useState, useEffect } from "react";
+import LoadingScreen from "@shared/LoadingScreen/LoadingScreen";
+
 const Home = () => {
+    const [homePageData, setHomePageData] = useState<any>();
+
+    const {
+        hero,
+        contacts,
+        calendar,
+        aboutUs,
+        residents,
+        donation,
+        bePartner,
+        partners,
+    } = homePageData || {};
+
+    const fetchData = async () => {
+        try {
+            const data = await getHomePageData();
+            setHomePageData(data);
+            console.log(data);
+        } catch (err) {
+            console.error("Failed to fetch home page data:", err);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return (
         <>
-            <Hero />
-            <Contacts />
-            <Calendar />
-            <About />
-            <Residents />
-            <Donations />
-            <Partnership />
-            <Partners />
-            <Team />
+            {!homePageData ? (
+                <LoadingScreen />
+            ) : (
+                <>
+                    <Hero {...hero} />
+                    <Contacts {...contacts} />
+                    <Calendar {...calendar} />
+                    <About {...aboutUs} />
+                    <Residents {...residents} />
+                    <Donations {...donation} />
+                    <Partnership {...bePartner} />
+                    <Partners {...partners} />
+                    <Team />
+                </>
+            )}
         </>
     );
 };

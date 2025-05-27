@@ -1,0 +1,7 @@
+.main {
+    gap: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    min-height: calc(100vh - 140px - 132px);
+}

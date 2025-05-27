@@ -1,8 +1,19 @@
 type EventType = {
   date: string;
   name: string;
-  description: string;
-  price: string;
+  price: number | null;
+  url: string;
+  isFreeToPay: boolean;
+  community: {
+    id: number;
+    documentId: string;
+    name: string;
+  } | null;
+  project: {
+    id: number;
+    documentId: string;
+    name: string;
+  } | null;
 };
 
 type AboutCardType = {
@@ -11,21 +22,36 @@ type AboutCardType = {
 };
 
 type TeamCardType = {
-  merits: string | number;
-  name: string;
-  roles: string[];
+  aboutMe: string;
+  firstName: string;
+  lastName: string;
+  statuses: string[];
   description: string;
-  vklink: string;
+  vkUrl?: string;
+  tgUrl?: string;
 };
 
 type PartnerCardType = {
   name: string;
-  avatar: string
-}
+  avatar: string;
+};
 
 type ResidentCardType = {
   name: string;
-  icon: string
-}
+  icon: string;
+};
 
-export type { EventType, AboutCardType, TeamCardType, PartnerCardType, ResidentCardType };
+type NavbarItemType = {
+  name: string;
+  link: string;
+  icon: string;
+};
+
+export type {
+  EventType,
+  AboutCardType,
+  TeamCardType,
+  PartnerCardType,
+  ResidentCardType,
+  NavbarItemType,
+};

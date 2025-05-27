@@ -1,34 +1,17 @@
 import s from "./Residents.module.css";
 import { ResidentCardType } from "@mytypes/types";
 import ResidentCard from "@ui/ResidentCard/ResidentCard";
+import { Text } from "@gravity-ui/uikit";
 
-const RESIDENTS_LIST: ResidentCardType[] = [
-    { name: "Народный Театр", icon: "icons/bank.svg" },
-    { name: "Кубы и речи", icon: "icons/bank.svg" },
-    { name: "Школа импровизации", icon: "icons/bank.svg" },
-    { name: "Народный Театр", icon: "icons/bank.svg" },
-    { name: "Кубы и речи", icon: "icons/bank.svg" },
-    { name: "Школа импровизации", icon: "icons/bank.svg" },
-    { name: "Народный Театр", icon: "icons/bank.svg" },
-    { name: "Кубы и речи", icon: "icons/bank.svg" },
-    { name: "Школа импровизации", icon: "icons/bank.svg" },
-    { name: "Народный Театр", icon: "icons/bank.svg" },
-    { name: "Кубы и речи", icon: "icons/bank.svg" },
-    { name: "Школа импровизации", icon: "icons/bank.svg" },
-    { name: "Народный Театр", icon: "icons/bank.svg" },
-    { name: "Кубы и речи", icon: "icons/bank.svg" },
-
-];
-
-const Residents = () => {
+const Residents = ({ header, residents }: any) => {
     return (
         <section className="section">
-            <h2 className={s.title}>
-                Сообщества-резиденты Лиги Речи <br /> приглашают на свои мероприятия
-            </h2>
+            <Text as="h2" className={s.title} variant="display-3">
+                {header}
+            </Text>
             <ul className={`flex ${s.list}`}>
-                {RESIDENTS_LIST.map((resident: ResidentCardType) => {
-                    return <ResidentCard resident={resident}/>
+                {residents.map((resident: ResidentCardType) => {
+                    return <ResidentCard resident={resident} />;
                 })}
             </ul>
         </section>
