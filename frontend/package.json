@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
-    "@gravity-ui/uikit": "^7.11.0",
+    "@gravity-ui/uikit": "^7.13.1",
     "@types/luxon": "^3.6.2",
     "@types/node": "^22.15.3",
     "@types/react": "^19.0.10",

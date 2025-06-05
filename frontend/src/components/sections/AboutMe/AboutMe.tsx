@@ -194,7 +194,7 @@ const AboutMe = () => {
                             name="showVk"
                             id="showVk"
                             checked={userData.showVk}
-                            onUpdate={(value) => {
+                            onUpdate={(value: any) => {
                                 setUserData((prevState) => ({
                                     ...prevState,
                                     showVk: value,
