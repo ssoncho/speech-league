@@ -46,8 +46,12 @@ const MyLevel = () => {
             <Text className={s.title} as="h2" variant="subheader-3">
                 Уровень
             </Text>
-            <Text as="h2" variant="display-2">{returnLevel(level.role)}</Text>
-            <Text as="h2" variant="subheader-2">{returnDescription(level.role)}</Text>
+            <Text className={s.level} as="h2" variant="display-2">
+                {returnLevel(level.role)}
+            </Text>
+            <Text className={s.description} as="h2" variant="subheader-2">
+                {returnDescription(level.role)}
+            </Text>
         </section>
     );
 };

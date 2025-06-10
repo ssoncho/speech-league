@@ -20,17 +20,17 @@ const NAVBAR_ITEMS: NavbarItemType[] = [
     },
     {
         name: "Портфолио",
-        link: "/donations",
+        link: "donations",
         icon: "/icons/eye.svg",
     },
     {
         name: "Мои проекты",
-        link: "/level",
+        link: "projects",
         icon: "/icons/heart.svg",
     },
     {
         name: "Участники",
-        link: "/me",
+        link: "participants",
         icon: "/icons/microphone.svg",
     },
 ];

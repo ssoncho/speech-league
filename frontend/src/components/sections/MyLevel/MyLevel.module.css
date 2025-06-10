@@ -10,3 +10,11 @@
 .title {
     margin-bottom: 30px;
 }
+
+.level {
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 800px
+}
