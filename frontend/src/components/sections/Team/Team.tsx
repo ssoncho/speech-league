@@ -13,7 +13,7 @@ const Team = () => {
 
     const getTeamData = () => {
         axios
-            .get("https://speech-league.onrender.com/api/team")
+            .get("https://speechleague.na4u.ru/api/team")
             .then((response: AxiosResponse) => {
                 console.log(response.data);
                 setTeam(response.data);

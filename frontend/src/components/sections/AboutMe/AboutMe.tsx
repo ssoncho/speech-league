@@ -18,7 +18,6 @@ const AboutMe = () => {
         birthDate: "",
         vkUrl: null,
         showVk: false,
-        fbUrl: null,
         showFb: false,
         tgUrl: null,
         showTg: false,
@@ -198,31 +197,6 @@ const AboutMe = () => {
                                 setUserData((prevState) => ({
                                     ...prevState,
                                     showVk: value,
-                                }));
-                            }}
-                        />
-                    </div>
-                    <div className={s.input_wrap}>
-                        <Text as="p" variant="header-1">
-                            Аккаунт FB:
-                        </Text>
-                        <TextInput
-                            className={s.input}
-                            size="xl"
-                            placeholder="https://facebook.com/example"
-                            id="fbUrl"
-                            name="fbUrl"
-                            value={userData.fbUrl || ""}
-                            onChange={handleUserData}
-                        />
-                        <Switch
-                            name="showFb"
-                            id="showFb"
-                            checked={userData.showFb}
-                            onUpdate={(value) => {
-                                setUserData((prevState) => ({
-                                    ...prevState,
-                                    showFb: value,
                                 }));
                             }}
                         />
