@@ -124,6 +124,13 @@
     "fio": {
       "type": "string",
       "private": true
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

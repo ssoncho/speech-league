@@ -15,7 +15,13 @@ export default factories.createCoreController(
         .documents("api::contacts.contacts")
         .findMany({
           populate: {
-            socialLink: true,
+            socialLink: {
+              populate: {
+                icon: {
+                  fields: ["url"],
+                },
+              },
+            },
           },
         });
       if (contactsEntities.length) {

@@ -11,11 +11,39 @@ export default factories.createCoreService(
       const [entities, communities, events] = await Promise.all([
         strapi.documents("api::home-page.home-page").findMany({
           populate: {
-            hero: true,
+            hero: {
+              populate: {
+                photo: {
+                  fields: ["url"],
+                },
+              },
+            },
             contacts: true,
             calendar: true,
             aboutUs: {
-              populate: "*",
+              populate: {
+                we: {
+                  populate: {
+                    image: {
+                      fields: ["url"],
+                    },
+                  },
+                },
+                mission: {
+                  populate: {
+                    image: {
+                      fields: ["url"],
+                    },
+                  },
+                },
+                financing: {
+                  populate: {
+                    image: {
+                      fields: ["url"],
+                    },
+                  },
+                },
+              },
             },
             residents: true,
             donation: true,
@@ -27,6 +55,11 @@ export default factories.createCoreService(
         }),
 
         strapi.documents("api::community.community").findMany({
+          populate: {
+            logo: {
+              fields: ["url"],
+            },
+          },
           fields: ["name", "url", "type"],
           status: "published",
         }),

@@ -8,6 +8,9 @@ const teamService = {
       .documents("plugin::users-permissions.user")
       .findMany({
         populate: {
+          photo: {
+            fields: ["url"],
+          },
           role: {
             fields: ["name"],
           },

@@ -21,6 +21,9 @@ export default factories.createCoreService(
           { date: "asc" }, // Сортировка по дате по возрастанию
         ],
         populate: {
+          cover: {
+            fields: ["url"],
+          },
           community: {
             fields: ["name"],
           },

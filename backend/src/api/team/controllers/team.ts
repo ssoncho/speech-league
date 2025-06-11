@@ -22,9 +22,11 @@ export default {
           role,
           projects,
           communities,
+          photo,
         } = member;
 
         const result: Record<string, any> = {
+          photo,
           firstName,
           lastName,
           aboutMe,

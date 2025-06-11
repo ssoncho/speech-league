@@ -396,6 +396,7 @@ export interface ApiCommunityCommunity extends Struct.CollectionTypeSchema {
       'api::community.community'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     shortDescription: Schema.Attribute.Text;
@@ -457,6 +458,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::community.community'
     >;
+    cover: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -554,6 +556,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
+    description: '';
     displayName: '\u041F\u0440\u043E\u0435\u043A\u0442\u044B';
     pluralName: 'projects';
     singularName: 'project';
@@ -577,6 +580,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -1089,6 +1093,7 @@ export interface PluginUsersPermissionsUser
         minLength: 6;
       }>;
     patronymic: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images'>;
     projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;

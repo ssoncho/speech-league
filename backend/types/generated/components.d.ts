@@ -17,6 +17,7 @@ export interface ComponentsLink extends Struct.ComponentSchema {
     displayName: 'socialLink';
   };
   attributes: {
+    icon: Schema.Attribute.Media<'images'>;
     text: Schema.Attribute.String & Schema.Attribute.Required;
     type: Schema.Attribute.Enumeration<['mailing', 'group']> &
       Schema.Attribute.Required;
@@ -27,10 +28,12 @@ export interface ComponentsLink extends Struct.ComponentSchema {
 export interface LayoutComponentsAboutUsCard extends Struct.ComponentSchema {
   collectionName: 'components_layout_components_about_us_cards';
   info: {
+    description: '';
     displayName: 'aboutUsCard';
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -139,6 +142,7 @@ export interface LayoutHero extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
