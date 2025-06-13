@@ -17,7 +17,10 @@ export default factories.createCoreController(
           populate: {
             socialLink: {
               populate: {
-                icon: {
+                iconDark: {
+                  fields: ["url"],
+                },
+                iconLight: {
                   fields: ["url"],
                 },
               },

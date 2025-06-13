@@ -15,7 +15,7 @@ export default factories.createCoreService(
             populate: {
               socialLink: {
                 populate: {
-                  icon: {
+                  iconLight: {
                     fields: ["url"],
                   },
                 },

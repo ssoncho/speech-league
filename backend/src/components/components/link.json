@@ -22,7 +22,15 @@
       ],
       "required": true
     },
-    "icon": {
+    "iconDark": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "iconLight": {
       "allowedTypes": [
         "images"
       ],

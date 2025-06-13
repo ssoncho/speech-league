@@ -17,7 +17,8 @@ export interface ComponentsLink extends Struct.ComponentSchema {
     displayName: 'socialLink';
   };
   attributes: {
-    icon: Schema.Attribute.Media<'images'>;
+    iconDark: Schema.Attribute.Media<'images'>;
+    iconLight: Schema.Attribute.Media<'images'>;
     text: Schema.Attribute.String & Schema.Attribute.Required;
     type: Schema.Attribute.Enumeration<['mailing', 'group']> &
       Schema.Attribute.Required;
