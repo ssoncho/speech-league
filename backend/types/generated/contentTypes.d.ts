@@ -471,6 +471,10 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    plannedGo: Schema.Attribute.Relation<
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
     price: Schema.Attribute.Integer;
     project: Schema.Attribute.Relation<'manyToOne', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
@@ -1074,6 +1078,10 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    eventsPlannedGo: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::event.event'
+    >;
     fbUrl: Schema.Attribute.String;
     fio: Schema.Attribute.String & Schema.Attribute.Private;
     firstName: Schema.Attribute.String & Schema.Attribute.Required;
