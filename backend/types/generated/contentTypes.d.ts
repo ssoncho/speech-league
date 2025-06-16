@@ -475,7 +475,15 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       'manyToMany',
       'plugin::users-permissions.user'
     >;
-    price: Schema.Attribute.Integer;
+    price: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     project: Schema.Attribute.Relation<'manyToOne', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     shortDescription: Schema.Attribute.Text &

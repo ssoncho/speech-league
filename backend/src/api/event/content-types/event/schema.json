@@ -37,7 +37,9 @@
     },
     "price": {
       "type": "integer",
-      "required": false
+      "required": true,
+      "default": 0,
+      "min": 0
     },
     "isFreeToPay": {
       "type": "boolean",

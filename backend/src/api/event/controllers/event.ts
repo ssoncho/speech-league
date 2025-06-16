@@ -64,5 +64,39 @@ export default factories.createCoreController(
         return ctx.internalServerError();
       }
     },
+
+    async getEventCard(ctx) {
+      const eventId = ctx.params.id;
+
+      // Получаем event с relation plannedGo
+      const event = await strapi.documents("api::event.event").findOne({
+        documentId: eventId,
+        populate: {
+          plannedGo: {
+            fields: [],
+          },
+          cover: {
+            fields: ["url"],
+          },
+        },
+        fields: ["name", "url", "description", "date", "price", "isFreeToPay"],
+      });
+
+      if (!event) {
+        return ctx.notFound(`Event with id=${eventId} does not exist`);
+      }
+
+      const plannedGoCount = Array.isArray(event.plannedGo)
+        ? event.plannedGo.length
+        : 0;
+
+      const { plannedGo, ...rest } = event;
+      const response = {
+        ...rest,
+        plannedGoCount: plannedGoCount,
+      };
+
+      return ctx.send(response, 200);
+    },
   })
 );
