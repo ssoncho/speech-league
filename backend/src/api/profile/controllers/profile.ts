@@ -16,7 +16,7 @@ export default {
         },
       });
 
-    const { id, provider, confirmed, blocked, username, ...userData } = user;
+    const { provider, confirmed, blocked, username, ...userData } = user;
 
     const schema = strapi.getModel("plugin::users-permissions.user");
     return await strapi.contentAPI.sanitize.output(userData, schema);
