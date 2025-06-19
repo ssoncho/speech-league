@@ -25,7 +25,6 @@ const LoginForm = () => {
             }
             navigate("/profile/me");
         } catch (error: any) {
-            console.log(error.status);
             add({
                 title: "Ошибка",
                 content: "Неверный email/пароль",

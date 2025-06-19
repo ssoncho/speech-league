@@ -21,3 +21,10 @@
     );
     height: 3px;
 }
+
+.img {
+    width: 520px;
+    height: 512px;
+    object-fit: cover;
+    mask-image: url('../../../../public/images/hero-mask.png');
+}

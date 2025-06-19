@@ -18,3 +18,18 @@
 .description {
     max-width: 800px
 }
+
+.skeleton {
+    display: block;
+}
+
+.level_skeleton {
+    width: 200px;
+    height: 32px;
+    margin-bottom: 20px;
+}
+
+.description_skeleton {
+    height: 40px;
+    width: 700px;
+}

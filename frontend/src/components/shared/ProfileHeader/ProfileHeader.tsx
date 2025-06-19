@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { api } from "@api/BaseUrl";
 import { AxiosResponse } from "axios";
 import { useAuth } from "../../../AuthContext";
+import { Skeleton } from "@gravity-ui/uikit";
 
 const ProfileHeader = () => {
     const [headerData, setHeaderData] = useState({
@@ -43,12 +44,18 @@ const ProfileHeader = () => {
                 />
 
                 <div className={`flex ${s.user_info}`}>
-                    <Text variant="display-2" as="h2">
-                        {headerData.firstName} {headerData.lastName}
-                    </Text>
-                    <Text variant="header-1" as="h2">
-                        Уровень - "{headerData.role}"
-                    </Text>
+                    {!headerData.firstName && !headerData.lastName ? (
+                        <Skeleton className={s.skeleton} />
+                    ) : (
+                        <>
+                            <Text variant="display-2" as="h2">
+                                {headerData.firstName} {headerData.lastName}
+                            </Text>
+                            <Text variant="header-1" as="h2">
+                                Уровень - "{headerData.role}"
+                            </Text>
+                        </>
+                    )}
                 </div>
                 <div className={`flex ${s.links}`}>
                     <Link to="/">

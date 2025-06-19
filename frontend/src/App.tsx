@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { AuthProvider } from "./AuthContext";
 import MyLevel from "@sections/MyLevel/MyLevel";
 import NotFoundPage from "@sections/NotFoundPage/NotFoundPage";
+import Event from "@pages/Event/Event";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/event/:id" element={<Event />} />
                 </Route>
                 <Route element={<ProtectedRoute />}>
                     <Route path="/profile" element={<ProfileLayout />}>

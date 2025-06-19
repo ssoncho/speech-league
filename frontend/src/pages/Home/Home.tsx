@@ -31,7 +31,6 @@ const Home = () => {
         try {
             const data = await getHomePageData();
             setHomePageData(data);
-            console.log(data);
         } catch (err) {
             console.error("Failed to fetch home page data:", err);
         }

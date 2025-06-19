@@ -27,7 +27,6 @@ const RegisterForm = () => {
             if (response.data.jwt) {
                 login(response.data.jwt);
             }
-            console.log(response.data);
             navigate("/profile/me");
         });
     };
