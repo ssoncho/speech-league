@@ -9,8 +9,7 @@ type HeaderLink = {
 
 const HEADER_LINKS: HeaderLink[] = [
     { name: "КТО МЫ", link: "/" },
-    { name: "ПРОЕКТЫ", link: "#residents" },
-    { name: "СООБЩЕСТВА", link: "/login" },
+    { name: "СООБЩЕСТВА", link: "#residents" },
     { name: "МОЙ ПРОФИЛЬ", link: "/profile/me" },
 ];
 
