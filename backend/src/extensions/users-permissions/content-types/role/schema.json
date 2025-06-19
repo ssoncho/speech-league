@@ -47,6 +47,10 @@
     },
     "level": {
       "type": "integer"
+    },
+    "ruName": {
+      "type": "string",
+      "required": true
     }
   }
 }

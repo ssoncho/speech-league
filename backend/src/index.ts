@@ -26,9 +26,11 @@ export default {
         if (data?.email) {
           data.username = data.email;
         }
-        data.fio = [data.lastName, data.firstName, data.patronymic]
-          .filter(Boolean)
-          .join(" ");
+        if (data.lastName || data.firstName || data.patronymic) {
+          data.fio = [data.lastName, data.firstName, data.patronymic]
+            .filter(Boolean)
+            .join(" ");
+        }
 
         // if (data.fio) {
         //   const parts = data.fio.trim().split(/\s+/);
@@ -44,9 +46,11 @@ export default {
           data.username = data.email;
         }
 
-        data.fio = [data.lastName, data.firstName, data.patronymic]
-          .filter(Boolean)
-          .join(" ");
+        if (data.lastName || data.firstName || data.patronymic) {
+          data.fio = [data.lastName, data.firstName, data.patronymic]
+            .filter(Boolean)
+            .join(" ");
+        }
 
         // if (data.fio) {
         //   const parts = data.fio.trim().split(/\s+/);

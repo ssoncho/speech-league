@@ -13,6 +13,13 @@
     "description": {
       "type": "text",
       "required": true
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

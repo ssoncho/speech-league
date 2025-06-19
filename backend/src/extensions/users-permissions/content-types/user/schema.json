@@ -124,6 +124,19 @@
     "fio": {
       "type": "string",
       "private": true
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "eventsPlannedGo": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "mappedBy": "plannedGo"
     }
   }
 }

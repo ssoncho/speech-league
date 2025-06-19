@@ -396,6 +396,7 @@ export interface ApiCommunityCommunity extends Struct.CollectionTypeSchema {
       'api::community.community'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     shortDescription: Schema.Attribute.Text;
@@ -457,6 +458,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::community.community'
     >;
+    cover: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -469,7 +471,19 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    price: Schema.Attribute.Integer;
+    plannedGo: Schema.Attribute.Relation<
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
+    price: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     project: Schema.Attribute.Relation<'manyToOne', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     shortDescription: Schema.Attribute.Text &
@@ -554,6 +568,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
+    description: '';
     displayName: '\u041F\u0440\u043E\u0435\u043A\u0442\u044B';
     pluralName: 'projects';
     singularName: 'project';
@@ -577,6 +592,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -1025,6 +1041,7 @@ export interface PluginUsersPermissionsRole
       'plugin::users-permissions.permission'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    ruName: Schema.Attribute.String & Schema.Attribute.Required;
     type: Schema.Attribute.String & Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1070,6 +1087,10 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    eventsPlannedGo: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::event.event'
+    >;
     fbUrl: Schema.Attribute.String;
     fio: Schema.Attribute.String & Schema.Attribute.Private;
     firstName: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1089,6 +1110,7 @@ export interface PluginUsersPermissionsUser
         minLength: 6;
       }>;
     patronymic: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images'>;
     projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;

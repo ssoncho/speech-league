@@ -14,6 +14,11 @@ export default factories.createCoreService(
             fields: ["phone", "phoneOwner"],
             populate: {
               socialLink: {
+                populate: {
+                  iconLight: {
+                    fields: ["url"],
+                  },
+                },
                 fields: ["url"],
               },
             },

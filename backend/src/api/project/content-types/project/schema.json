@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Проекты"
+    "displayName": "Проекты",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -47,6 +48,13 @@
       "relation": "oneToMany",
       "target": "api::event.event",
       "mappedBy": "project"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

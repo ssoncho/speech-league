@@ -5,10 +5,18 @@ import { sanitize } from "@strapi/utils";
 
 export default {
   async getFullInfo(ctx) {
-    const user = ctx.state.user;
+    const user = await strapi
+      .documents("plugin::users-permissions.user")
+      .findOne({
+        documentId: ctx.state.user.documentId,
+        populate: {
+          photo: {
+            fields: ["url"],
+          },
+        },
+      });
 
-    const { id, provider, confirmed, blocked, username, role, ...userData } =
-      user;
+    const { provider, confirmed, blocked, username, ...userData } = user;
 
     const schema = strapi.getModel("plugin::users-permissions.user");
     return await strapi.contentAPI.sanitize.output(userData, schema);
@@ -20,7 +28,7 @@ export default {
     const result: Record<string, any> = {
       firstName,
       lastName,
-      role: role.name,
+      role: role.ruName,
     };
     return ctx.send(result);
   },
