@@ -1,10 +1,20 @@
 .card {
-    background: url('../../../../public/images/about.png') no-repeat;
+    /* background: url('../../../../public/images/about.png') no-repeat; */
     flex-direction: column;
     gap: 30px;
     border: 1px #000 solid;
     width: 322px;
     height: 515px;
     text-align: center;
-    padding: 150px 27px 30px 27px;
+    
+}
+
+.content {
+    padding: 0 27px 30px;
+}
+
+.img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }

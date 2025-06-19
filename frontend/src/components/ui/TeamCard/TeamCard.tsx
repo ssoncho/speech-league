@@ -7,11 +7,12 @@ type TeamCardProps = {
 };
 
 const TeamCard: React.FC<TeamCardProps> = ({ card, className = "" }) => {
-    const { firstName, lastName, statuses, aboutMe, vkUrl, tgUrl } = card;
+    const FALLBACK_IMG = '/images/no-avatar.jpg'
+    const { firstName, lastName, statuses, aboutMe, vkUrl, tgUrl, photo } = card;
     return (
         <li className={`flex ${className} ${s.card}`}>
             <div className={`flex ${s.card_top}`}>
-                <img src="images/avatar.png" alt="" />
+                <img className={s.img} src={photo ? photo.url : FALLBACK_IMG} alt="" />
             </div>
             <h3 className={s.title}>
                 {firstName} {lastName}

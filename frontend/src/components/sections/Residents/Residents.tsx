@@ -5,7 +5,7 @@ import { Text } from "@gravity-ui/uikit";
 
 const Residents = ({ header, residents }: any) => {
     return (
-        <section className="section">
+        <section className="section" id="residents">
             <Text as="h2" className={s.title} variant="display-3">
                 {header}
             </Text>

@@ -14,11 +14,22 @@ type EventType = {
     documentId: string;
     name: string;
   } | null;
+  cover: {
+    id: number;
+    documentId: string;
+    url: string;
+  };
+  documentId: string
 };
 
 type AboutCardType = {
   title: string;
   description: string;
+  image: {
+    id: number;
+    documentId: string;
+    url: string;
+  };
 };
 
 type TeamCardType = {
@@ -29,6 +40,9 @@ type TeamCardType = {
   description: string;
   vkUrl?: string;
   tgUrl?: string;
+  photo: {
+    url: string;
+  };
 };
 
 type PartnerCardType = {
@@ -38,7 +52,12 @@ type PartnerCardType = {
 
 type ResidentCardType = {
   name: string;
-  icon: string;
+  url: string;
+  logo: {
+    id: number;
+    documentId: string;
+    url: string;
+  };
 };
 
 type NavbarItemType = {

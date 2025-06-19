@@ -8,10 +8,15 @@ type HeroPropsType = {
     id: string;
     title: string;
     description: string;
+    photo: {
+        id: number;
+        documentId: string;
+        url: string;
+    };
 };
 
 const Hero: React.FC<HeroPropsType> = (data) => {
-    const { title, description } = data;
+    const { title, description, photo } = data;
     const navigate = useNavigate();
     const handleLoginRedirect = () => {
         navigate("/login");
@@ -20,9 +25,9 @@ const Hero: React.FC<HeroPropsType> = (data) => {
     return (
         <section className="section">
             <div className={`flex ${s.content}`}>
-                <img src="images/hero.webp" alt="Hero" />
+                <img className={s.img} src={photo.url} alt="Hero" />
                 <div className={`flex ${s.hero_text}`}>
-                    <Text as="h1" variant="display-4">
+                    <Text className={s.title} as="h1" variant="display-4">
                         {title}
                     </Text>
                     <Text variant="body-2">{description}</Text>

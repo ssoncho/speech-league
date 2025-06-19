@@ -1,6 +1,6 @@
 import s from "./Header.module.css";
-import { Link } from "react-router";
 import { Text } from "@gravity-ui/uikit";
+import { HashLink as Link } from "react-router-hash-link";
 
 type HeaderLink = {
     name: string;
@@ -9,8 +9,9 @@ type HeaderLink = {
 
 const HEADER_LINKS: HeaderLink[] = [
     { name: "КТО МЫ", link: "/" },
-    { name: "ПРОЕКТЫ", link: "/" },
+    { name: "ПРОЕКТЫ", link: "#residents" },
     { name: "СООБЩЕСТВА", link: "/login" },
+    { name: "МОЙ ПРОФИЛЬ", link: "/profile/me" },
 ];
 
 const Header = () => {
@@ -18,7 +19,7 @@ const Header = () => {
         <header className={`header ${s.header}`}>
             <div className={`flex ${s.container}`}>
                 <img
-                    src="images/logo.webp"
+                    src="/images/logo.webp"
                     alt="Логотип Лиги Речи"
                     className={s.logo}
                 />
@@ -28,7 +29,9 @@ const Header = () => {
                             <li key={index} className={s.header_navitem}>
                                 {" "}
                                 <Text variant="header-1">
-                                    <Link to={link.link}>{link.name}</Link>
+                                    <Link smooth to={link.link}>
+                                        {link.name}
+                                    </Link>
                                 </Text>
                             </li>
                         );

@@ -1,0 +1,60 @@
+.grid {
+    display: grid;
+    grid-template-columns: 400px auto;
+    gap: 100px;
+    margin: 0 auto 30px;
+}
+
+.column_2 {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.img {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.title {
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-family: "JejuMyeongjo";
+}
+
+.date {
+    margin-bottom: 30px;
+    color: #c70808;
+    font-size: 36px;
+    font-family: "JejuMyeongjo";
+}
+
+.visitors {
+    font-size: 15px;
+    line-height: 20px;
+    font-family: "JejuMyeongjo";
+}
+
+.description {
+    font-size: 20px;
+    line-height: 25px;
+    font-family: "JejuMyeongjo";
+    white-space: pre-line;
+}
+
+.button {
+    margin-top: auto;
+    width: 350px;
+    font-family: "JejuMyeongjo";
+}
+.link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    font-size: 20px;
+    font-family: "JejuMyeongjo";
+}

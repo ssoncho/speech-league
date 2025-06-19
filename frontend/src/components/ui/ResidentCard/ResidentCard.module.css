@@ -1,12 +1,28 @@
 .card {
+    display: flex;
+    flex-basis: 200px;
+    transition: all 0.1s ease-in-out;
+    border: 1px #ccc solid;
+    border-radius: 10px;
+}
+
+.card_wrap {
     flex-direction: column;
+    flex-basis: 100%;
     align-items: center;
     gap: 10px;
-    flex-basis: 180px;
+    padding: 20px;
+}
+
+.card:hover {
+    background-color: #fef6d0;
 }
 
 .avatar {
-    max-height: 100px;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .name {

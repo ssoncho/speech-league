@@ -29,7 +29,7 @@ const Contacts = (props: any) => {
                             {mailingLinks.map((link: any) => {
                                 return (
                                     <a href={link.url} target="_blank">
-                                        <img src="icons/vk.svg" alt="VK"  />
+                                        <img src={link.iconDark.url} alt="icon"  />
                                     </a>
                                 );
                             })}
@@ -48,7 +48,7 @@ const Contacts = (props: any) => {
                             {groupLinks.map((link: any) => {
                                 return (
                                     <a href={link.url} target="_blank">
-                                        <img src="icons/vk.svg" alt="VK" />
+                                        <img src={link.iconDark.url} alt="icon"  />
                                     </a>
                                 );
                             })}

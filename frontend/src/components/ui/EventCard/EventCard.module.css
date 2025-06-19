@@ -1,13 +1,23 @@
 .card {
-    width: 813px;
-    height: 176px;
-    background-image: url('../../../../public/images/event.webp');
+    position: relative;
+    justify-content: flex-end;
+    /* background-image: url('../../../../public/images/event.webp');
     background-size: 277px 176px;
     background-position: left;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     align-items: center;
-    justify-content: flex-end;
+
+    width: 813px;
+    height: 176px;
     font-family: "JejuMyeongjo";
+}
+
+.img {
+    position: absolute;
+    left: 0;
+    width: 277px;
+    height: 176px;
+    object-fit: cover;
 }
 
 .card:nth-child(even) {
@@ -17,6 +27,7 @@
 .content {
     align-items: center;
     gap: 50px;
+    z-index: 1;
     -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
@@ -28,8 +39,8 @@
 
 .date {
     font-size: 37px;
-    text-align: center;
     line-height: 36px;
+    text-align: center;
 }
 
 .separator {
@@ -40,10 +51,10 @@
 }
 
 .info {
-    height: 100%;
     flex-direction: column;
-    text-align: center;
     justify-content: space-between;
+    height: 100%;
+    text-align: center;
 }
 
 .title {
@@ -61,7 +72,7 @@
 }
 
 .free {
-    color: #C70808;
+    color: #c70808;
 }
 
 .notfree {

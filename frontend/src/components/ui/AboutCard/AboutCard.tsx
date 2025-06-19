@@ -7,11 +7,14 @@ type AboutCardProps = {
 };
 
 const AboutCard: React.FC<AboutCardProps> = ({ card }) => {
-    const { title, description } = card;
+    const { title, description, image } = card;
     return (
         <li className={`flex ${s.card}`}>
-            <Text as="h2" variant="subheader-3">{title}</Text>
-            <Text as="p" variant="body-1">{description}</Text>
+            <img className={s.img} src={image.url} alt="" />
+            <div className={s.content}>
+                <Text as="h2" variant="subheader-3">{title}</Text>
+                <Text as="p" variant="body-1">{description}</Text>
+            </div>
         </li>
     );
 };

@@ -30,4 +30,10 @@
 .exit_link {
     color: #C70808;
     gap: 10px;
+    align-items: center;
+}
+
+.skeleton {
+    height: 60px;
+    width: 200px;
 }
