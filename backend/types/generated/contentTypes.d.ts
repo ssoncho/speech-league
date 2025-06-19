@@ -1041,6 +1041,7 @@ export interface PluginUsersPermissionsRole
       'plugin::users-permissions.permission'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    ruName: Schema.Attribute.String & Schema.Attribute.Required;
     type: Schema.Attribute.String & Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

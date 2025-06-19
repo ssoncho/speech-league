@@ -28,7 +28,7 @@ export default {
     const result: Record<string, any> = {
       firstName,
       lastName,
-      role: role.name,
+      role: role.ruName,
     };
     return ctx.send(result);
   },
