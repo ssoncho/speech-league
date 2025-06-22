@@ -1130,7 +1130,8 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
-      }>;
+      }> &
+      Schema.Attribute.DefaultTo<'username'>;
     vkUrl: Schema.Attribute.String;
   };
 }

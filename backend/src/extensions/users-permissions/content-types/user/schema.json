@@ -17,6 +17,7 @@
       "minLength": 3,
       "unique": true,
       "configurable": false,
+      "default": "username",
       "required": false
     },
     "email": {
@@ -126,9 +127,7 @@
       "private": true
     },
     "photo": {
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false
     },
